@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  api:
+    build: ./api
+    ports:
+      - 8087:8087
+  client:
+    build: ./client
+    depends_on:
+      - api
+    ports:
+      - 8080:8080
